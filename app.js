@@ -5,6 +5,11 @@ const app = express()
 
 app.use(bodyParser.urlencoded({extended:true}))
 
+
+app.get('/', (req, res) =>{
+    res.send('it work!!')
+})
+
 app.get('/happybirthday', (req, res) =>{
     const {name, age} = req.query
     res.send(`
