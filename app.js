@@ -21,6 +21,14 @@ app.get('/happybirthday', (req, res) =>{
     `)
 })
 
+app.post('/form', (req, res) =>{
+    obj = {}
+    Object.keys(req.body).forEach(element =>{
+       obj['form-'+element] = req.body[element]
+    })
+    res.json(obj)
+})
+
 app.listen(process.env.PORT || 3333, () =>{
     console.log('server it running')
 })
