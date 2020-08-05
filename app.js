@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 const app = express()
 
@@ -29,6 +30,10 @@ app.post('/form', (req, res) =>{
     res.json(obj)
 })
 
+app.get('/style.css', (req,res) =>{
+    res.sendFile(path.resolve(__dirname, 'public', 'style.css'));
+})
+
 app.listen(process.env.PORT || 3333, () =>{
     console.log('server it running')
-})
+}) 
